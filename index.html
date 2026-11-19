@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Faro Pet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <img src="banner-grand-faro.jpg" alt="Grand Faro Pet - Seu pet merece o melhor">
+</header>
+
+<nav class="hotbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰ Menu</button>
+    <div class="menu-links" id="menuLinks">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#loja">Loja</a>
+        <a href="#carrinho">Carrinho</a>
+        <a href="#adocao">Adoção</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
+<main>
+    <section id="inicio" class="banner">
+        <h2>Bem-vindo à Grand Faro Pet!</h2>
+        <p>Tudo o que seu melhor amigo precisa para ter uma vida mais feliz, saudável e divertida.</p>
+        <button onclick="irParaLoja()">Conheça nossa loja</button>
+    </section>
+
+    <section class="promocao">
+        <h2>Super promoção!</h2>
+        <h3>10% de desconto</h3>
+        <p>Aproveite nossas ofertas especiais em produtos selecionados para seu melhor amigo.</p>
+        <button onclick="irParaLoja()">Aproveitar promoção</button>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre a Grand Faro Pet</h2>
+        <div class="sobre">
+            <p>A Grand Faro Pet é uma empresa fictícia criada para oferecer produtos e serviços para animais de estimação. Nosso objetivo é ajudar os tutores a cuidar melhor de seus companheiros, reunindo praticidade, carinho e qualidade em um só lugar.</p>
+            <div class="valores">
+                <article>
+                    <h3>Missão</h3>
+                    <p>Oferecer cuidado e produtos que contribuam para o bem-estar dos animais.</p>
+                </article>
+                <article>
+                    <h3>Visão</h3>
+                    <p>Ser uma loja de referência no atendimento e cuidado com os pets.</p>
+                </article>
+                <article>
+                    <h3>Valores</h3>
+                    <p>Respeito, responsabilidade, carinho e compromisso com os animais.</p>
+                </article>
+            </div>
+            <h3>Nossos diferenciais</h3>
+            <p>Atendimento próximo, variedade de produtos e serviços básicos para facilitar a rotina dos tutores.</p>
+        </div>
+    </section>
+
+    <section id="loja">
+        <h2>Nossa Loja e Serviços</h2>
+        <p>Confira algumas opções disponíveis em nossa loja.</p>
+        <input type="text" id="pesquisa" class="pesquisa" placeholder="Pesquisar produto ou serviço...">
+        <p id="semResultado" class="aviso" hidden>Nenhum produto ou serviço encontrado.</p>
+
+        <div class="produtos" id="listaProdutos">
+            <article class="produto">
+                <img src="https://images.unsplash.com/photo-1582798358481-d199fb7347bb?w=500" alt="Petiscos para cães">
+                <h3>Petiscos para cachorro</h3>
+                <p>Petiscos para agradar e recompensar seu cão.</p>
+                <p class="preco">R$ 24,90</p>
+                <button onclick="adicionar('Petiscos para cachorro', 24.90)">Adicionar ao carrinho</button>
+            </article>
+
+            <article class="produto">
+                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=500" alt="Brinquedo para animais">
+                <h3>Brinquedo pet</h3>
+                <p>Uma opção para divertir seu animal de estimação.</p>
+                <p class="preco">R$ 29,90</p>
+                <button onclick="adicionar('Brinquedo pet', 29.90)">Adicionar ao carrinho</button>
+            </article>
+
+            <article class="produto">
+                <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=500" alt="Acessório para pet">
+                <h3>Acessório pet</h3>
+                <p>Acessório para o dia a dia do seu companheiro.</p>
+                <p class="preco">R$ 39,90</p>
+                <button onclick="adicionar('Acessório pet', 39.90)">Adicionar ao carrinho</button>
+            </article>
+
+            <article class="produto">
+                <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=500" alt="Roupa para cachorro">
+                <h3>Roupa para pet</h3>
+                <p>Uma peça confortável para seu animal.</p>
+                <p class="preco">R$ 49,90</p>
+                <button onclick="adicionar('Roupa para pet', 49.90)">Adicionar ao carrinho</button>
+            </article>
+
+            <article class="produto">
+                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc4e" alt="Ração para animais">
+                <h3>Ração para cães</h3>
+                <p>Alimento para complementar a rotina do seu pet.</p>
+                <p class="preco">R$ 59,90</p>
+                <button onclick="adicionar('Ração para cães', 59.90)">Adicionar ao carrinho</button>
+            </article>
+
+            <article class="produto">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500" alt="Cama para cachorro">
+                <h3>Cama para pet</h3>
+                <p>Um espaço confortável para o descanso.</p>
+                <p class="preco">R$ 89,90</p>
+                <button onclick="adicionar('Cama para pet', 89.90)">Adicionar ao carrinho</button>
+            </article>
+
+            <article class="produto">
+                <h3>Banho</h3>
+                <p>Higiene e cuidado especial para seu pet.</p>
+                <p class="preco">R$ 45,00</p>
+                <button onclick="adicionar('Banho', 45)">Contratar serviço</button>
+            </article>
+
+            <article class="produto">
+                <h3>Tosa</h3>
+                <p>Cuidados com a pelagem e o bem-estar.</p>
+                <p class="preco">R$ 50,00</p>
+                <button onclick="adicionar('Tosa', 50)">Contratar serviço</button>
+            </article>
+
+            <article class="produto">
+                <h3>Banho e Tosa</h3>
+                <p>Um cuidado completo para seu melhor amigo.</p>
+                <p class="preco">R$ 85,00</p>
+                <button onclick="adicionar('Banho e Tosa', 85)">Contratar serviço</button>
+            </article>
+        </div>
+    </section>
+
+    <section id="carrinho">
+        <h2>Meu Carrinho</h2>
+        <div class="carrinho">
+            <div id="itens">Seu carrinho está vazio.</div>
+            <p class="total">Total: R$ <span id="total">0,00</span></p>
+            <button onclick="finalizarCompra()">Finalizar pedido pelo WhatsApp</button>
+            <button onclick="limparCarrinho()">Limpar carrinho</button>
+        </div>
+    </section>
+
+    <section id="adocao" class="adocao">
+        <h2>Adote um Amigo!</h2>
+        <p>Existem muitos animais esperando por um lar cheio de amor. Que tal mudar uma vida?</p>
+        <div class="produtos">
+            <article class="pet">
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500" alt="Cachorro Buddy disponível para adoção">
+                <h3>Buddy</h3>
+                <p>Cachorro • Carinhoso e brincalhão</p>
+                <button onclick="adotar('Buddy')">Quero adotar</button>
+            </article>
+            <article class="pet">
+                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500" alt="Gata Mel disponível para adoção">
+                <h3>Mel</h3>
+                <p>Gatinha • Dócil e companheira</p>
+                <button onclick="adotar('Mel')">Quero adotar</button>
+            </article>
+            <article class="pet">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500" alt="Cachorro Thor disponível para adoção">
+                <h3>Thor</h3>
+                <p>Cachorro • Alegre e amigável</p>
+                <button onclick="adotar('Thor')">Quero adotar</button>
+            </article>
+        </div>
+        <p><strong>A adoção é um ato de amor e responsabilidade!</strong></p>
+    </section>
+
+    <section id="galeria">
+        <h2>Nossos Pets</h2>
+        <p>Alguns momentos especiais dos nossos amigos de quatro patas.</p>
+        <div class="galeria">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600" alt="Cachorro durante atendimento">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600" alt="Gato recebendo cuidados">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600" alt="Cachorro feliz">
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600" alt="Gato olhando para a câmera">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600" alt="Dois cachorros brincando">
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600" alt="Cachorro descansando">
+            <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600" alt="Gato deitado">
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=600" alt="Gato em ambiente doméstico">
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <div class="contato">
+            <p><strong>Endereço:</strong><br>Rua 4 de Dezembro de 2011, Bairro 6 - Belo Horizonte/MG</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Rua+4+de+Dezembro+de+2011+Bairro+6+Belo+Horizonte" target="_blank">Ver localização no Google Maps</a></p>
+            <p><strong>Telefone:</strong><br>(31) 00000-0000</p>
+            <p><strong>WhatsApp:</strong><br><a href="https://wa.me/5500000000000" target="_blank">Conversar pelo WhatsApp</a></p>
+            <p><strong>E-mail:</strong><br><a href="mailto:contato@grandfaropet.com">contato@grandfaropet.com</a></p>
+            <p><strong>Horário de atendimento:</strong><br>Segunda a sábado, das 8h às 18h.</p>
+        </div>
+    </section>
+
+    <section id="ouvidoria" class="formulario">
+        <h2>Fale Conosco</h2>
+        <p>Envie suas dúvidas, sugestões, elogios ou reclamações.</p>
+        <form id="formContato">
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome">
+            </div>
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required placeholder="Digite seu e-mail">
+            </div>
+            <div class="campo">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" required placeholder="(31) 99999-9999">
+            </div>
+            <div class="campo">
+                <label for="assunto">Assunto:</label>
+                <select id="assunto" required>
+                    <option value="">Selecione</option>
+                    <option>Dúvida</option>
+                    <option>Sugestão</option>
+                    <option>Elogio</option>
+                    <option>Reclamação</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="texto">Mensagem:</label>
+                <textarea id="texto" required placeholder="Digite sua mensagem"></textarea>
+            </div>
+            <button type="submit">Enviar por e-mail</button>
+            <button type="button" onclick="ouvidoriaWhatsApp()">Enviar pelo WhatsApp</button>
+            <p id="mensagem" class="aviso" aria-live="polite"></p>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>Grand Faro Pet © 2026</p>
+    <p>Seu pet merece o melhor!</p>
+    <p>Página desenvolvida para fins educacionais.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

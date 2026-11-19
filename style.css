@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: #0096A8;
+    --cor-secundaria: #008FA3;
+    --cor-escura: #006D7C;
+    --cor-fundo: #F5F5F3;
+    --cor-branca: #FFFFFF;
+    --cor-texto: #444444;
+    --cor-borda: #DDE8E8;
+    --cor-promocao: #FFF1D6;
+    --fonte: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cor-fundo);
+    font-family: var(--fonte);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.topo {
+    width: 100%;
+    padding: 0;
+    line-height: 0;
+}
+
+.topo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hotbar {
+    background: var(--cor-principal);
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+.menu-links a:hover,
+.menu-links a.ativo {
+    color: #D5F5F5;
+    text-decoration: underline;
+}
+
+.menu-btn {
+    display: none;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    margin-bottom: 45px;
+    text-align: center;
+    scroll-margin-top: 85px;
+}
+
+h2 {
+    color: var(--cor-secundaria);
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+button {
+    background: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: var(--cor-escura);
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #36BBC6;
+    outline-offset: 3px;
+}
+
+.banner {
+    background: linear-gradient(120deg, #008FA3, #36BBC6);
+    color: white;
+    padding: 45px 20px;
+    border-radius: 12px;
+}
+
+.banner h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.banner button {
+    background: white;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.promocao {
+    background: var(--cor-promocao);
+    border: 2px dashed #E6A23C;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.promocao h2 {
+    color: #B87512;
+}
+
+.sobre,
+.contato,
+.formulario,
+.carrinho {
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    box-shadow: 0 3px 8px #0000000D;
+}
+
+.valores {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.valores article {
+    background: #E6F7F7;
+    padding: 18px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 190px;
+}
+
+.pesquisa {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px;
+    margin: 15px 0 20px;
+    border: 1px solid #CCDADA;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.produto,
+.pet {
+    background: white;
+    padding: 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    width: 230px;
+    box-shadow: 0 3px 8px #0000000D;
+    transition: transform 0.2s;
+}
+
+.produto:hover,
+.pet:hover {
+    transform: translateY(-4px);
+}
+
+.produto img,
+.pet img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.produto h3,
+.pet h3 {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.preco {
+    color: var(--cor-secundaria);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.carrinho {
+    text-align: left;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.total {
+    color: var(--cor-secundaria);
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.adocao {
+    background: #E6F7F7;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+}
+
+.contato p {
+    margin: 12px 0;
+}
+
+.contato a {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.contato a:hover {
+    color: var(--cor-escura);
+}
+
+.campo {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #CCDADA;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: var(--fonte);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 5px #0096A855;
+}
+
+.campo textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.aviso {
+    color: #B87512;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    background: var(--cor-secundaria);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 700px) {
+    .hotbar {
+        padding: 10px;
+    }
+
+    .menu-btn {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .menu-links {
+        display: none;
+        padding-top: 10px;
+    }
+
+    .menu-links.aberto {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-links a {
+        margin: 4px;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    .banner {
+        padding: 30px 15px;
+    }
+
+    .banner h2 {
+        font-size: 24px;
+    }
+
+    .produto,
+    .pet {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .item-carrinho {
+        flex-wrap: wrap;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria img {
+        height: 180px;
+    }
+
+    .contato,
+    .formulario,
+    .carrinho,
+    .sobre {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
